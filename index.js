@@ -9,6 +9,9 @@ dotenv.config();
 connectDB();
 app.use(express.json({ extended: true }));
 app.use(cors({ origin: "*", credentials: true }));
+app.get("/", (req, res) => {
+	res.redirect("/api");
+});
 app.use("/api", MTMA);
 
 const PORT = 5000;
