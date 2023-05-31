@@ -8,8 +8,8 @@ const app = express();
 dotenv.config();
 connectDB();
 app.use(express.json({ extended: true }));
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use("/api", MTMA);
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
